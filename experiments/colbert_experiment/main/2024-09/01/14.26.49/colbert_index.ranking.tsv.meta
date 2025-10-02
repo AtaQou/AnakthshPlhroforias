@@ -1,0 +1,73 @@
+{
+    "metadata": {
+        "hostname": "192.168.1.15",
+        "current_datetime": "Sep 01, 2024 ;  2:26PM EEST (+0300)",
+        "cmd": "main.py"
+    },
+    "provenance": {
+        "initial_stacktrace": [
+            "\/Users\/heliasantoniou\/projects\/anakthshplhroforias\/ColBERT\/colbert\/searcher.py:98:_search_all_Q:   provenance = Provenance()",
+            "\/Users\/heliasantoniou\/projects\/anakthshplhroforias\/ColBERT\/colbert\/searcher.py:75:search_all:   return self._search_all_Q(queries, Q, k, filter_fn=filter_fn, qid_to_pids=qid_to_pids)"
+        ],
+        "source": "Searcher::search_all",
+        "queries": "queries.tsv",
+        "config": {
+            "query_token_id": "[unused0]",
+            "doc_token_id": "[unused1]",
+            "query_token": "[Q]",
+            "doc_token": "[D]",
+            "ncells": 2,
+            "centroid_score_threshold": 0.45,
+            "ndocs": 1024,
+            "load_index_with_mmap": false,
+            "index_path": null,
+            "index_bsize": 64,
+            "nbits": 2,
+            "kmeans_niters": 20,
+            "resume": false,
+            "pool_factor": 1,
+            "clustering_mode": "hierarchical",
+            "protected_tokens": 0,
+            "similarity": "cosine",
+            "bsize": 64,
+            "accumsteps": 1,
+            "lr": 1e-5,
+            "maxsteps": 400000,
+            "save_every": null,
+            "warmup": 20000,
+            "warmup_bert": null,
+            "relu": false,
+            "nway": 64,
+            "use_ib_negatives": true,
+            "reranker": false,
+            "distillation_alpha": 1.0,
+            "ignore_scores": false,
+            "model_name": null,
+            "query_maxlen": 32,
+            "attend_to_mask_tokens": false,
+            "interaction": "colbert",
+            "dim": 128,
+            "doc_maxlen": 180,
+            "mask_punctuation": true,
+            "checkpoint": "colbertv2.0",
+            "triples": "\/future\/u\/okhattab\/root\/unit\/experiments\/2021.10\/downstream.distillation.round2.2_score\/round2.nway6.cosine.ib\/examples.64.json",
+            "collection": "Collection\/converted_collection.tsv",
+            "queries": "\/future\/u\/okhattab\/data\/MSMARCO\/queries.train.tsv",
+            "index_name": "colbert_index",
+            "overwrite": false,
+            "root": "\/Users\/heliasantoniou\/projects\/anakthshplhroforias\/experiments",
+            "experiment": "colbert_experiment",
+            "index_root": null,
+            "name": "2024-09\/01\/14.26.49",
+            "rank": 0,
+            "nranks": 1,
+            "amp": true,
+            "gpus": 0,
+            "avoid_fork_if_possible": false
+        },
+        "k": 100,
+        "serialization_stacktrace": [
+            "\/Users\/heliasantoniou\/projects\/anakthshplhroforias\/ColBERT\/colbert\/data\/ranking.py:78:save:   line = ujson.dumps(d, indent=4)"
+        ]
+    }
+}

@@ -1,0 +1,49 @@
+import os
+import re
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from collections import defaultdict
+
+# Ensure you have the necessary NLTK data files
+nltk.download('stopwords')
+nltk.download('punkt')
+
+def preprocess_text(text):
+    text = re.sub(r'\W', ' ', text)
+    text = text.lower()
+    tokens = nltk.word_tokenize(text)
+    tokens = [word for word in tokens if word not in stopwords.words('english')]
+    stemmer = PorterStemmer()
+    tokens = [stemmer.stem(word) for word in tokens]
+    return tokens
+
+def build_inverted_index(documents):
+    inverted_index = defaultdict(list)
+    for doc_id, content in documents.items():
+        tokens = preprocess_text(content)
+        for token in tokens:
+            inverted_index[token].append(doc_id)
+    return inverted_index
+
+def read_documents(directory):
+    documents = {}
+    for filename in os.listdir(directory):
+        filepath = os.path.join(directory, filename)
+        with open(filepath, 'r', encoding='utf-8') as file:
+            documents[filename] = file.read()
+    return documents
+
+# Usage
+document_directory = 'Collection/docs'
+documents = read_documents(document_directory)
+inverted_index = build_inverted_index(documents)
+
+# Debugging: Print some of the inverted index entries
+for term, doc_ids in list(inverted_index.items())[:10]:  # Print the first 10 terms and their associated doc IDs
+    print(f"Term: {term}, Document IDs: {doc_ids}")
+
+#save the inverted index to a file to inspect it manually
+with open('inverted_index.txt', 'w', encoding='utf-8') as f:
+    for term, doc_ids in inverted_index.items():
+        f.write(f"Term: {term}, Document IDs: {doc_ids}\n")
