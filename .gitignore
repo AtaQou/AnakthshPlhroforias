@@ -1,3 +1,5 @@
 ColBERT/experiments/
 ColBERT/indexes/
 ColBERT/data/
+colbertv2.0 2/pytorch_model.bin
+colbertv2.0.tar.gz
