@@ -44,6 +44,6 @@ for term, doc_ids in list(inverted_index.items())[:10]:  # Print the first 10 te
     print(f"Term: {term}, Document IDs: {doc_ids}")
 
 #save the inverted index to a file to inspect it manually
-with open('inverted_index.txt', 'w', encoding='utf-8') as f:
+with open('inverted_index.py', 'w', encoding='utf-8') as f:
     for term, doc_ids in inverted_index.items():
         f.write(f"Term: {term}, Document IDs: {doc_ids}\n")

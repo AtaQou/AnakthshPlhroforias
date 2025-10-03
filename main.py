@@ -133,7 +133,7 @@ if __name__ == "__main__":
     documents = read_documents(documents_directory)
 
     # File path for inverted index
-    inverted_index_file = 'inverted_index.txt'
+    inverted_index_file = 'inverted_index.py'
 
     # Read inverted index from file
     inverted_index = read_inverted_index(inverted_index_file)
