@@ -1,4 +1,3 @@
-You're right: the code fences are broken. Use proper fenced Markdown blocks with language tags and blank lines before/after. Here’s a cleaned version you can paste over your README:``` markdown
 # Overview
 
 This project demonstrates various approaches to Information Retrieval (IR) in Python using a collection of medical-text documents. It covers these main topics:
